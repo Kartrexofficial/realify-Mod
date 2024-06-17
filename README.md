@@ -17,7 +17,7 @@ Welcome to Realify! This module attempts to make the budget realmeUI experience 
 This module targets devices running realmeUI 1/2/3/4.
 
 Currently, the module has been tested on the following devices:
-- realme 8 (RMX3085 with UI 3.0)
+- realme 8 (RMX3085 with UI 3.0 & 4.0)
 - realme C11 (RMX2185/RMX2185SG with UI 2.0)
 - realme C12 (RMX2189/RMX2184 with UI 2.0)
 - realme C15 (RMX2180 with UI 2.0)
