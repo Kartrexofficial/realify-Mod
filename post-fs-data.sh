@@ -27,11 +27,7 @@ check_realmeui_ver()
 {
     if [[ $RUI_VER == V2.0 ]]; then
         FEATURE_PATH="/my_product/etc/extension/appfeature_liteos.xml"
-    elif [[ $RUI_VER == V3.0 ]]; then
-        FEATURE_PATH="/my_product/etc/extension/realme_product_rom_extend_feature_${PRJ_NAME}.xml"
-    elif [[ $RUI_VER == V4.0 ]]; then
-        FEATURE_PATH="/my_product/etc/extension/feature_com.coloros.oppoguardelf.xml"
-    elif [[ $RUI_VER == V3.0 ]]; then
+    elif [[ $RUI_VER == V3.0  ||  $RUI_VER == V4.0 ]]; then
         FEATURE_PATH="/my_product/etc/extension/realme_product_rom_extend_feature_${PRJ_NAME}.xml"
     elif [[ $RUI_VER == V1.0 ]]; then
         FEATURE_PATH="/oppo_product/etc/permissions/com.oppo.features.os.xml"
@@ -45,21 +41,15 @@ check_realmeui_ver()
 
 prepare_feature_list() 
 {
-    # Check if the file exists
-    if [[ -e "$FEATURE_PATH" ]]; then
-        # Start by copying for modification
-        cp $FEATURE_PATH $TEMP_PATH
-    else
-        log "${FEATURE_PATH} does not exist, exiting!"
-        exit 1
-    fi
+    # Start by copying for modification
+    cp $FEATURE_PATH $TEMP_PATH
 }
 
 remove_lowend_features()
 {
     # Enables high end app launch animations
-    remove_feature com.android.launcher.light_animator
-    remove_feature com.oppo.launcher.light_animator
+  #  remove_feature com.android.launcher.light_animator
+  #  remove_feature com.oppo.launcher.light_animator
     remove_feature com.android.launcher.light_folder_animation
     # Enable Volume Blur
     remove_feature com.android.systemui.disable_volume_blur
